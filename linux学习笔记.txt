@@ -1,0 +1,39 @@
+cut -f n filename 取出第n列
+cut -d "*" -f n filename 取出*分割的第n列
+
+sed 's/*/*/g' filename 将*替换为*
+sed -n '3,6 p' filename 打印3-6行
+sed '2 q' filename 打印前两行
+（head -n 2 filename）
+
+grep 'CDS' filename 搜索含CDS的行
+grep -w 'CDS' filename 严格匹配CDS
+grep -v
+'^'匹配行首，'$'匹配行尾
+'^#'匹配行首为'#'的行
+'^#' 为空行
+grep -v '^\s*$' filename
+awk '$0!~/^\s*$/{print}' 打印非空白行
+
+wc -l 查看文件行数
+wc -c 查看文件字数
+
+awk -F, '{print $1,$2}' finame.csv 以逗号为分隔符，打印第一列和第二列
+awk '/pattern/ {print}' filename 打印含有pattern的行
+awk '$1 > 50 {print$1}' filename 打印第一列大于50的列
+
+sort -k 4 filename 按照第4列排序
+sort -n 按照数字值大小排序
+
+uniq -c filename 去重复并计算频率
+先sort 再uniq 才能真的合并同类项 
+
+split(对象，列表，分隔符)
+gsub(替换前，替换后，对象）
+
+
+${s:$i:1} 获得一个字符串i位置的字符
+${#variable} 返回字符串长度
+$（(...)）执行算数操作，并将结果作为变量返回
+$s1$s2 连接两个字符串
+
