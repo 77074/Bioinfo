@@ -33,3 +33,4 @@ ggplot(df,aes(x=PC1,y=PC2,color=iris.Species))+ #注意访问数据框时可以�
   geom_point()
 
 
+
